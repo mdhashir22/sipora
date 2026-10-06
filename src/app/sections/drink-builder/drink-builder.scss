@@ -1,0 +1,2343 @@
+:host {
+  display: block;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.drink-builder {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding:
+    clamp(90px, 8vw, 120px)
+    clamp(24px, 5vw, 80px)
+    clamp(85px, 7vw, 105px);
+
+  overflow: hidden;
+
+  color:
+    var(--cream);
+
+  background:
+    radial-gradient(
+      circle at 50% 55%,
+      rgba(201, 135, 69, 0.11),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(85, 48, 29, 0.13),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #090604 0%,
+      #120b08 48%,
+      #080504 100%
+    );
+
+  isolation:
+    isolate;
+}
+
+
+/* Texture */
+
+.drink-builder::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -3;
+
+  opacity: 0.025;
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.4) 3px
+    );
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.builder-glow {
+  position: absolute;
+
+  left: 50%;
+  top: 58%;
+
+  width:
+    clamp(400px, 46vw, 680px);
+
+  aspect-ratio:
+    1;
+
+  border-radius:
+    50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    rgba(201, 135, 69, 0.07);
+
+  filter:
+    blur(110px);
+
+  pointer-events:
+    none;
+
+  z-index:
+    -2;
+}
+
+
+.builder-orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 60%;
+
+  aspect-ratio:
+    1;
+
+  border:
+    1px solid
+    rgba(201, 135, 69, 0.07);
+
+  border-radius:
+    50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  pointer-events:
+    none;
+
+  z-index:
+    -1;
+}
+
+
+.orbit-one {
+  width:
+    clamp(400px, 40vw, 590px);
+}
+
+
+.orbit-two {
+  width:
+    clamp(540px, 54vw, 780px);
+
+  border-color:
+    rgba(242, 230, 213, 0.035);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.builder-header {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(130px, 0.55fr)
+    minmax(360px, 1.65fr)
+    minmax(230px, 0.9fr);
+
+  align-items:
+    end;
+
+  gap:
+    clamp(25px, 3vw, 48px);
+
+  margin-bottom:
+    clamp(52px, 5vw, 78px);
+
+  z-index:
+    5;
+}
+
+
+.section-number {
+  display: flex;
+
+  align-items:
+    center;
+
+  gap:
+    13px;
+
+  padding-bottom:
+    10px;
+
+  color:
+    rgba(242, 230, 213, 0.42);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.6rem;
+
+  letter-spacing:
+    0.22em;
+
+  text-transform:
+    uppercase;
+
+  white-space:
+    nowrap;
+}
+
+
+.number-line {
+  width:
+    38px;
+
+  height:
+    1px;
+
+  flex-shrink:
+    0;
+
+  background:
+    rgba(201, 135, 69, 0.75);
+}
+
+
+.builder-heading {
+  min-width:
+    0;
+}
+
+
+.builder-heading .eyebrow {
+  margin:
+    0 0 14px;
+
+  color:
+    var(--caramel);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.64rem;
+
+  letter-spacing:
+    0.32em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.builder-heading h2 {
+  margin:
+    0;
+
+  color:
+    var(--cream);
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(4.2rem, 7vw, 8rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.76;
+
+  letter-spacing:
+    -0.055em;
+}
+
+
+.builder-heading h2 span {
+  display:
+    block;
+
+  margin-top:
+    12px;
+
+  color:
+    var(--caramel);
+
+  font-style:
+    italic;
+}
+
+
+.builder-intro {
+  width:
+    100%;
+
+  max-width:
+    330px;
+
+  margin:
+    0 0 7px;
+
+  color:
+    rgba(242, 230, 213, 0.48);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    clamp(0.72rem, 0.8vw, 0.82rem);
+
+  line-height:
+    1.8;
+}
+
+
+/* =====================================================
+   WORKSPACE
+===================================================== */
+
+.builder-workspace {
+  position: relative;
+
+  width:
+    100%;
+
+  min-height:
+    clamp(590px, 46vw, 680px);
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(220px, 0.78fr)
+    minmax(330px, 1.35fr)
+    minmax(230px, 0.82fr);
+
+  border-top:
+    1px solid
+    rgba(242, 230, 213, 0.1);
+
+  border-bottom:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+
+  z-index:
+    3;
+}
+
+
+/* =====================================================
+   LEFT CONTROLS
+===================================================== */
+
+.builder-controls {
+  min-width:
+    0;
+
+  padding:
+    clamp(30px, 2.5vw, 40px)
+    clamp(24px, 2.7vw, 42px)
+    35px
+    0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  border-right:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+}
+
+
+.control-label {
+  margin:
+    0 0 25px;
+
+  color:
+    rgba(242, 230, 213, 0.38);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.55rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.24em;
+}
+
+
+.option-heading {
+  margin:
+    clamp(18px, 2vw, 38px)
+    0
+    28px;
+}
+
+
+.option-heading > span {
+  display:
+    block;
+
+  margin-bottom:
+    7px;
+
+  color:
+    var(--caramel);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.5rem;
+
+  letter-spacing:
+    0.22em;
+}
+
+
+.option-heading h3 {
+  margin:
+    0;
+
+  color:
+    var(--cream);
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(2rem, 2.4vw, 2.6rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    1;
+}
+
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+.option-list {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  width:
+    100%;
+}
+
+
+.option {
+  width:
+    100%;
+
+  min-height:
+    72px;
+
+  padding:
+    0 4px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    24px
+    minmax(0, 1fr)
+    30px;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  border:
+    0;
+
+  border-bottom:
+    1px solid
+    rgba(242, 230, 213, 0.07);
+
+  background:
+    transparent;
+
+  color:
+    rgba(242, 230, 213, 0.55);
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
+
+  transition:
+    padding
+      0.35s ease,
+    color
+      0.35s ease,
+    background
+      0.35s ease;
+}
+
+
+.option-dot {
+  width:
+    8px;
+
+  height:
+    8px;
+
+  border:
+    1px solid
+    rgba(242, 230, 213, 0.28);
+
+  border-radius:
+    50%;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.flavour-option-copy {
+  min-width:
+    0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    5px;
+}
+
+
+.flavour-option-copy strong {
+  overflow:
+    hidden;
+
+  color:
+    inherit;
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.03em;
+
+  text-overflow:
+    ellipsis;
+
+  white-space:
+    nowrap;
+}
+
+
+.flavour-option-copy small {
+  overflow:
+    hidden;
+
+  color:
+    rgba(242, 230, 213, 0.28);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.48rem;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.15em;
+
+  text-transform:
+    uppercase;
+
+  text-overflow:
+    ellipsis;
+
+  white-space:
+    nowrap;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.option-check {
+  opacity:
+    0;
+
+  color:
+    var(--caramel);
+
+  font-size:
+    0.75rem;
+
+  text-align:
+    center;
+
+  transform:
+    translateX(-5px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.option.selected {
+  color:
+    var(--cream);
+}
+
+
+.option.selected .option-dot {
+  border-color:
+    var(--caramel);
+
+  background:
+    var(--caramel);
+
+  box-shadow:
+    0 0 14px
+    rgba(201, 135, 69, 0.35);
+}
+
+
+.option.selected .option-check {
+  opacity:
+    1;
+
+  transform:
+    translateX(0);
+}
+
+
+.option.selected .flavour-option-copy small {
+  color:
+    rgba(201, 135, 69, 0.65);
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+  .option:hover {
+    padding-left:
+      12px;
+
+    color:
+      var(--cream);
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(201, 135, 69, 0.055),
+        transparent
+      );
+  }
+
+}
+
+
+/* =====================================================
+   CENTER PRODUCT
+===================================================== */
+
+.builder-product {
+  position:
+    relative;
+
+  min-width:
+    0;
+
+  padding:
+    35px
+    clamp(14px, 2vw, 28px)
+    25px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+}
+
+
+.product-label {
+  position:
+    absolute;
+
+  top:
+    35px;
+
+  left:
+    clamp(18px, 2.4vw, 35px);
+
+  color:
+    rgba(242, 230, 213, 0.28);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.52rem;
+
+  letter-spacing:
+    0.22em;
+
+  z-index:
+    7;
+}
+
+
+.product-display {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  flex:
+    1;
+
+  min-height:
+    500px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+}
+
+
+/* Product halo */
+
+.product-halo {
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  top:
+    49%;
+
+  width:
+    clamp(240px, 23vw, 340px);
+
+  aspect-ratio:
+    1;
+
+  border-radius:
+    50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(201, 135, 69, 0.19) 0%,
+      rgba(201, 135, 69, 0.05) 45%,
+      transparent 72%
+    );
+
+  filter:
+    blur(10px);
+
+  pointer-events:
+    none;
+}
+
+
+.product-halo::before,
+.product-halo::after {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    -35px;
+
+  border:
+    1px solid
+    rgba(201, 135, 69, 0.09);
+
+  border-radius:
+    50%;
+}
+
+
+.product-halo::after {
+  inset:
+    -85px;
+
+  border-color:
+    rgba(242, 230, 213, 0.04);
+}
+
+
+.cup-shadow {
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  bottom:
+    50px;
+
+  width:
+    clamp(160px, 16vw, 230px);
+
+  height:
+    30px;
+
+  border-radius:
+    50%;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    rgba(0, 0, 0, 0.72);
+
+  filter:
+    blur(15px);
+
+  pointer-events:
+    none;
+}
+
+
+/* =====================================================
+   REAL PRODUCT
+===================================================== */
+
+.real-drink-wrap {
+  position:
+    relative;
+
+  width:
+    min(390px, 31vw);
+
+  height:
+    clamp(440px, 37vw, 530px);
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  z-index:
+    5;
+
+  animation:
+    realDrinkFloat
+    5s
+    ease-in-out
+    infinite;
+}
+
+
+.builder-drink-image {
+  position:
+    relative;
+
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    contain;
+
+  user-select:
+    none;
+
+  pointer-events:
+    none;
+
+  -webkit-user-drag:
+    none;
+
+  filter:
+    drop-shadow(
+      0 35px 30px
+      rgba(0, 0, 0, 0.55)
+    )
+    drop-shadow(
+      0 0 35px
+      rgba(201, 135, 69, 0.08)
+    );
+
+  will-change:
+    transform,
+    opacity;
+
+  z-index:
+    2;
+}
+
+
+.drink-back-glow {
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  top:
+    50%;
+
+  width:
+    66%;
+
+  height:
+    70%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(201, 135, 69, 0.18),
+      rgba(201, 135, 69, 0.05) 48%,
+      transparent 72%
+    );
+
+  filter:
+    blur(35px);
+
+  pointer-events:
+    none;
+
+  z-index:
+    1;
+}
+
+
+@keyframes realDrinkFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(5px)
+      rotate(-0.6deg);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      rotate(0.6deg);
+  }
+
+}
+
+
+.product-note {
+  margin:
+    0;
+
+  color:
+    rgba(242, 230, 213, 0.28);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.52rem;
+
+  letter-spacing:
+    0.1em;
+
+  text-align:
+    center;
+}
+
+
+/* =====================================================
+   RIGHT SUMMARY
+===================================================== */
+
+.builder-summary {
+  min-width:
+    0;
+
+  padding:
+    clamp(30px, 2.5vw, 40px)
+    0
+    35px
+    clamp(24px, 2.7vw, 42px);
+
+  border-left:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+}
+
+
+.summary-top {
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  gap:
+    15px;
+
+  margin-bottom:
+    clamp(38px, 4vw, 58px);
+}
+
+
+.summary-number {
+  color:
+    rgba(242, 230, 213, 0.3);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.5rem;
+
+  letter-spacing:
+    0.2em;
+
+  white-space:
+    nowrap;
+}
+
+
+.summary-status {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    6px;
+
+  color:
+    #b2a272;
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.48rem;
+
+  letter-spacing:
+    0.16em;
+
+  white-space:
+    nowrap;
+}
+
+
+.summary-status::before {
+  content:
+    '';
+
+  width:
+    5px;
+
+  height:
+    5px;
+
+  flex-shrink:
+    0;
+
+  border-radius:
+    50%;
+
+  background:
+    #a7a36b;
+
+  box-shadow:
+    0 0 8px
+    rgba(167, 163, 107, 0.6);
+}
+
+
+.flavour-details {
+  will-change:
+    transform,
+    opacity;
+}
+
+
+.summary-title {
+  margin-bottom:
+    clamp(28px, 3vw, 42px);
+}
+
+
+.summary-title p {
+  margin:
+    0 0 8px;
+
+  color:
+    var(--caramel);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.5rem;
+
+  letter-spacing:
+    0.22em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.summary-title h3 {
+  max-width:
+    330px;
+
+  margin:
+    0;
+
+  color:
+    var(--cream);
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(2.65rem, 3.4vw, 4.2rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.85;
+
+  overflow-wrap:
+    break-word;
+}
+
+
+.flavour-description {
+  max-width:
+    310px;
+
+  min-height:
+    70px;
+
+  margin:
+    -10px 0 30px;
+
+  color:
+    rgba(242, 230, 213, 0.46);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.72rem;
+
+  line-height:
+    1.8;
+}
+
+
+.summary-list {
+  border-top:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+}
+
+
+.summary-row {
+  min-height:
+    64px;
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  gap:
+    18px;
+
+  border-bottom:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+}
+
+
+.summary-row span {
+  color:
+    rgba(242, 230, 213, 0.3);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.48rem;
+
+  letter-spacing:
+    0.18em;
+}
+
+
+.summary-row strong {
+  color:
+    rgba(242, 230, 213, 0.78);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.66rem;
+
+  font-weight:
+    500;
+
+  text-align:
+    right;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.create-btn {
+  width:
+    100%;
+
+  min-height:
+    60px;
+
+  margin-top:
+    36px;
+
+  padding:
+    0 20px
+    0 24px;
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  border:
+    1px solid
+    var(--caramel);
+
+  background:
+    var(--caramel);
+
+  color:
+    #120b08;
+
+  cursor:
+    pointer;
+
+  overflow:
+    hidden;
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.58rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.18em;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.create-btn i {
+  font-size:
+    1rem;
+
+  font-style:
+    normal;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+  .create-btn:hover {
+    background:
+      transparent;
+
+    color:
+      var(--cream);
+
+    box-shadow:
+      0 15px 40px
+      rgba(0, 0, 0, 0.2);
+
+    transform:
+      translateY(-2px);
+  }
+
+
+  .create-btn:hover i {
+    transform:
+      translate(4px, -4px);
+  }
+
+}
+
+
+.summary-note {
+  margin:
+    16px 0 0;
+
+  color:
+    rgba(242, 230, 213, 0.25);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.5rem;
+
+  line-height:
+    1.6;
+
+  text-align:
+    center;
+}
+
+
+/* =====================================================
+   SMALL DESKTOP
+   <= 1300
+===================================================== */
+
+@media (max-width: 1300px) {
+
+  .builder-header {
+    grid-template-columns:
+      0.45fr
+      1.55fr
+      0.8fr;
+
+    gap:
+      28px;
+  }
+
+
+  .builder-heading h2 {
+    font-size:
+      clamp(4rem, 6.5vw, 6.7rem);
+  }
+
+
+  .builder-workspace {
+    grid-template-columns:
+      minmax(210px, 0.78fr)
+      minmax(310px, 1.25fr)
+      minmax(220px, 0.82fr);
+  }
+
+
+  .real-drink-wrap {
+    width:
+      min(350px, 29vw);
+
+    height:
+      485px;
+  }
+
+
+  .option {
+    min-height:
+      68px;
+  }
+
+}
+
+
+/* =====================================================
+   LAPTOP / TABLET LANDSCAPE
+   <= 1100
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .drink-builder {
+    padding-left:
+      clamp(28px, 4vw, 48px);
+
+    padding-right:
+      clamp(28px, 4vw, 48px);
+  }
+
+
+  .builder-header {
+    grid-template-columns:
+      minmax(130px, 0.6fr)
+      minmax(0, 1.8fr);
+
+    gap:
+      24px 35px;
+  }
+
+
+  .builder-intro {
+    grid-column:
+      2;
+
+    max-width:
+      400px;
+
+    margin-top:
+      -5px;
+  }
+
+
+  /*
+    Controls + product on first row.
+    Summary gets full second row.
+  */
+
+  .builder-workspace {
+    grid-template-columns:
+      minmax(250px, 0.8fr)
+      minmax(360px, 1.2fr);
+
+    min-height:
+      auto;
+  }
+
+
+  .builder-controls {
+    padding-right:
+      clamp(28px, 4vw, 45px);
+  }
+
+
+  .builder-product {
+    min-height:
+      590px;
+  }
+
+
+  .real-drink-wrap {
+    width:
+      min(365px, 39vw);
+
+    height:
+      500px;
+  }
+
+
+  .builder-summary {
+    grid-column:
+      1 / -1;
+
+    padding:
+      34px 0 36px;
+
+    border-top:
+      1px solid
+      rgba(242, 230, 213, 0.08);
+
+    border-left:
+      0;
+  }
+
+
+  .summary-top {
+    margin-bottom:
+      32px;
+  }
+
+
+  .summary-title h3 {
+    max-width:
+      500px;
+
+    font-size:
+      clamp(3rem, 5vw, 4.2rem);
+  }
+
+
+  .flavour-description {
+    max-width:
+      500px;
+
+    min-height:
+      auto;
+  }
+
+
+  .summary-list {
+    display:
+      grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+
+  .summary-row {
+    padding:
+      0 18px;
+
+    border-right:
+      1px solid
+      rgba(242, 230, 213, 0.08);
+  }
+
+
+  .summary-row:first-child {
+    padding-left:
+      0;
+  }
+
+
+  .summary-row:last-child {
+    padding-right:
+      0;
+
+    border-right:
+      0;
+  }
+
+
+  .create-btn {
+    max-width:
+      360px;
+  }
+
+
+  .summary-note {
+    max-width:
+      360px;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET PORTRAIT
+   <= 800
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .drink-builder {
+    padding:
+      95px
+      26px
+      85px;
+  }
+
+
+  .builder-header {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      0;
+
+    margin-bottom:
+      50px;
+  }
+
+
+  .section-number {
+    margin-bottom:
+      30px;
+
+    padding-bottom:
+      0;
+  }
+
+
+  .builder-heading h2 {
+    font-size:
+      clamp(4rem, 12vw, 6.2rem);
+  }
+
+
+  .builder-intro {
+    grid-column:
+      auto;
+
+    max-width:
+      440px;
+
+    margin-top:
+      28px;
+  }
+
+
+  /*
+    Full vertical flow on portrait tablets.
+  */
+
+  .builder-workspace {
+    display:
+      block;
+  }
+
+
+  .builder-controls {
+    padding:
+      34px 0 42px;
+
+    border-right:
+      0;
+
+    border-bottom:
+      1px solid
+      rgba(242, 230, 213, 0.08);
+  }
+
+
+  .option-heading {
+    margin-top:
+      22px;
+  }
+
+
+  /*
+    Options become a responsive grid
+    instead of a huge vertical list.
+  */
+
+  .option-list {
+    display:
+      grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap:
+      0 20px;
+  }
+
+
+  .option {
+    min-height:
+      70px;
+  }
+
+
+  .builder-product {
+    min-height:
+      590px;
+
+    padding:
+      35px 0 28px;
+  }
+
+
+  .product-label {
+    left:
+      0;
+  }
+
+
+  .product-display {
+    min-height:
+      500px;
+  }
+
+
+  .real-drink-wrap {
+    width:
+      min(370px, 55vw);
+
+    height:
+      500px;
+  }
+
+
+  .builder-summary {
+    padding:
+      40px 0;
+
+    border-top:
+      1px solid
+      rgba(242, 230, 213, 0.08);
+  }
+
+
+  .summary-list {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   <= 650
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .drink-builder {
+    min-height:
+      auto;
+
+    padding:
+      84px
+      20px
+      75px;
+  }
+
+
+  .builder-glow {
+    width:
+      340px;
+
+    filter:
+      blur(90px);
+  }
+
+
+  .builder-orbit {
+    display:
+      none;
+  }
+
+
+  .builder-header {
+    margin-bottom:
+      42px;
+  }
+
+
+  .section-number {
+    margin-bottom:
+      27px;
+
+    font-size:
+      0.54rem;
+  }
+
+
+  .number-line {
+    width:
+      31px;
+  }
+
+
+  .builder-heading .eyebrow {
+    margin-bottom:
+      11px;
+
+    font-size:
+      0.54rem;
+
+    letter-spacing:
+      0.27em;
+  }
+
+
+  .builder-heading h2 {
+    font-size:
+      clamp(3.6rem, 16.5vw, 5.4rem);
+
+    line-height:
+      0.78;
+  }
+
+
+  .builder-heading h2 span {
+    margin-top:
+      9px;
+  }
+
+
+  .builder-intro {
+    max-width:
+      360px;
+
+    margin-top:
+      25px;
+
+    font-size:
+      0.72rem;
+
+    line-height:
+      1.7;
+  }
+
+
+  /* Controls */
+
+  .builder-controls {
+    padding:
+      30px 0 35px;
+  }
+
+
+  .control-label {
+    margin-bottom:
+      20px;
+
+    font-size:
+      0.5rem;
+  }
+
+
+  .option-heading {
+    margin:
+      20px 0 23px;
+  }
+
+
+  .option-heading h3 {
+    font-size:
+      2.15rem;
+  }
+
+
+  .option-list {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .option {
+    min-height:
+      65px;
+  }
+
+
+  /* Product */
+
+  .builder-product {
+    min-height:
+      auto;
+
+    padding:
+      32px 0 28px;
+  }
+
+
+  .product-label {
+    position:
+      relative;
+
+    top:
+      auto;
+
+    left:
+      auto;
+
+    width:
+      100%;
+
+    margin-bottom:
+      10px;
+  }
+
+
+  .product-display {
+    min-height:
+      430px;
+
+    height:
+      52svh;
+
+    max-height:
+      500px;
+  }
+
+
+  .real-drink-wrap {
+    width:
+      min(300px, 76vw);
+
+    height:
+      min(430px, 50svh);
+  }
+
+
+  .product-halo {
+    width:
+      min(260px, 68vw);
+  }
+
+
+  .product-halo::before {
+    inset:
+      -25px;
+  }
+
+
+  .product-halo::after {
+    inset:
+      -58px;
+  }
+
+
+  .cup-shadow {
+    bottom:
+      38px;
+
+    width:
+      170px;
+  }
+
+
+  .product-note {
+    font-size:
+      0.48rem;
+  }
+
+
+  /* Summary */
+
+  .builder-summary {
+    padding:
+      34px 0 0;
+  }
+
+
+  .summary-top {
+    margin-bottom:
+      34px;
+  }
+
+
+  .summary-title {
+    margin-bottom:
+      28px;
+  }
+
+
+  .summary-title h3 {
+    font-size:
+      clamp(3rem, 13vw, 4rem);
+  }
+
+
+  .flavour-description {
+    max-width:
+      350px;
+
+    margin:
+      0 0 27px;
+
+    font-size:
+      0.7rem;
+  }
+
+
+  .summary-list {
+    display:
+      block;
+  }
+
+
+  .summary-row {
+    min-height:
+      61px;
+
+    padding:
+      0;
+
+    border-right:
+      0;
+  }
+
+
+  .create-btn {
+    max-width:
+      none;
+
+    min-height:
+      58px;
+
+    margin-top:
+      32px;
+  }
+
+
+  .summary-note {
+    max-width:
+      none;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   <= 480
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .drink-builder {
+    padding:
+      78px
+      18px
+      70px;
+  }
+
+
+  .builder-header {
+    margin-bottom:
+      36px;
+  }
+
+
+  .section-number {
+    margin-bottom:
+      24px;
+  }
+
+
+  .builder-heading h2 {
+    font-size:
+      clamp(3.35rem, 16vw, 4.65rem);
+  }
+
+
+  .builder-intro {
+    margin-top:
+      22px;
+  }
+
+
+  .builder-controls {
+    padding-top:
+      28px;
+  }
+
+
+  .option-heading h3 {
+    font-size:
+      2rem;
+  }
+
+
+  .option {
+    min-height:
+      62px;
+
+    grid-template-columns:
+      22px
+      minmax(0, 1fr)
+      25px;
+  }
+
+
+  .flavour-option-copy strong {
+    font-size:
+      0.68rem;
+  }
+
+
+  .flavour-option-copy small {
+    font-size:
+      0.44rem;
+  }
+
+
+  .product-display {
+    min-height:
+      390px;
+
+    height:
+      48svh;
+
+    max-height:
+      445px;
+  }
+
+
+  .real-drink-wrap {
+    width:
+      min(270px, 74vw);
+
+    height:
+      min(390px, 46svh);
+  }
+
+
+  .product-halo {
+    width:
+      min(225px, 63vw);
+  }
+
+
+  .cup-shadow {
+    width:
+      145px;
+
+    height:
+      24px;
+  }
+
+
+  .summary-number,
+  .summary-status {
+    font-size:
+      0.44rem;
+  }
+
+
+  .summary-title h3 {
+    font-size:
+      clamp(2.8rem, 12vw, 3.5rem);
+  }
+
+
+  .create-btn {
+    font-size:
+      0.54rem;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+   <= 360
+===================================================== */
+
+@media (max-width: 360px) {
+
+  .drink-builder {
+    padding-left:
+      14px;
+
+    padding-right:
+      14px;
+  }
+
+
+  .builder-heading h2 {
+    font-size:
+      clamp(3rem, 16vw, 3.65rem);
+  }
+
+
+  .option-heading h3 {
+    font-size:
+      1.85rem;
+  }
+
+
+  .product-display {
+    min-height:
+      360px;
+  }
+
+
+  .real-drink-wrap {
+    width:
+      235px;
+
+    height:
+      350px;
+  }
+
+
+  .summary-top {
+    gap:
+      8px;
+  }
+
+
+  .summary-title h3 {
+    font-size:
+      2.7rem;
+  }
+
+
+  .summary-row strong {
+    max-width:
+      60%;
+  }
+
+}
+
+
+/* =====================================================
+   SHORT MOBILE SCREENS
+===================================================== */
+
+@media (max-width: 650px) and (max-height: 650px) {
+
+  .product-display {
+    min-height:
+      350px;
+
+    height:
+      370px;
+  }
+
+
+  .real-drink-wrap {
+    width:
+      235px;
+
+    height:
+      345px;
+  }
+
+}
+
+
+/* =====================================================
+   TOUCH
+===================================================== */
+
+@media (hover: none) {
+
+  .option,
+  .create-btn {
+    -webkit-tap-highlight-color:
+      transparent;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .real-drink-wrap {
+    animation:
+      none;
+  }
+
+
+  .option,
+  .option-dot,
+  .option-check,
+  .create-btn,
+  .create-btn i {
+    transition:
+      none !important;
+  }
+
+}

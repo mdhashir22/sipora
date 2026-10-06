@@ -1,12 +1,22 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Navbar } from './shared/navbar/navbar';
+import { Hero } from './sections/hero/hero';
+import { Flavours } from './sections/flavours/flavours';
+import { DrinkBuilder } from './sections/drink-builder/drink-builder';
+import { Story } from './sections/story/story';
+import { Cafe } from './sections/cafe/cafe';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.scss',
+  imports: [
+  Navbar,
+  Hero,
+  Flavours,
+  DrinkBuilder,
+  Story,
+  Cafe
+],
   templateUrl: './app.html',
+  styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('sipora');
-}
+export class App {}

@@ -1,0 +1,156 @@
+<header class="navbar">
+
+  <!-- LOGO -->
+  <a
+    href="#experience"
+    class="brand"
+    aria-label="SIPORA Home"
+    (click)="closeMenu()"
+  >
+    <img
+      src="/images/sipora-logo.png"
+      alt="SIPORA"
+      class="brand-logo"
+      draggable="false"
+    >
+  </a>
+
+
+  <!-- DESKTOP NAVIGATION -->
+  <nav class="nav-links" aria-label="Primary navigation">
+
+    <a href="#experience">
+      Experience
+    </a>
+
+    <a href="#flavours">
+      Flavours
+    </a>
+
+    <a href="#create">
+      Create
+    </a>
+
+    <a href="#story">
+      Story
+    </a>
+
+    <a href="#visit">
+      Visit
+    </a>
+
+  </nav>
+
+
+  <!-- RIGHT ACTIONS -->
+  <div class="nav-actions">
+
+    <button
+      class="bag-btn"
+      type="button"
+      aria-label="Open bag"
+    >
+      <span class="bag-text">
+        Bag
+      </span>
+
+      <span class="bag-count">
+        0
+      </span>
+    </button>
+
+
+    <!-- MOBILE HAMBURGER -->
+    <button
+      type="button"
+      class="menu-toggle"
+      [class.active]="menuOpen"
+      [attr.aria-expanded]="menuOpen"
+      aria-controls="mobile-navigation"
+      aria-label="Toggle navigation menu"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- COMPACT MOBILE MENU -->
+<div
+  id="mobile-navigation"
+  class="mobile-menu"
+  [class.open]="menuOpen"
+>
+
+  <div class="mobile-menu-glow"></div>
+
+
+  <nav
+    class="mobile-links"
+    aria-label="Mobile navigation"
+  >
+
+    <a
+      href="#experience"
+      (click)="closeMenu()"
+    >
+      <span>01</span>
+      <strong>Experience</strong>
+    </a>
+
+
+    <a
+      href="#flavours"
+      (click)="closeMenu()"
+    >
+      <span>02</span>
+      <strong>Flavours</strong>
+    </a>
+
+
+    <a
+      href="#create"
+      (click)="closeMenu()"
+    >
+      <span>03</span>
+      <strong>Create</strong>
+    </a>
+
+
+    <a
+      href="#story"
+      (click)="closeMenu()"
+    >
+      <span>04</span>
+      <strong>Story</strong>
+    </a>
+
+
+    <a
+      href="#visit"
+      (click)="closeMenu()"
+    >
+      <span>05</span>
+      <strong>Visit</strong>
+    </a>
+
+  </nav>
+
+
+  <div class="mobile-menu-footer">
+
+    <span>
+      SIP INTO ANOTHER WORLD.
+    </span>
+
+    <span>
+      KARACHI · 2026
+    </span>
+
+  </div>
+
+</div>

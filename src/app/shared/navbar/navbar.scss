@@ -1,0 +1,950 @@
+:host {
+  display: block;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 92px;
+
+  padding:
+    0 clamp(24px, 5vw, 80px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  background: transparent;
+
+  z-index: 100;
+}
+
+
+/* =====================================================
+   SIPORA LOGO
+===================================================== */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+
+.brand-logo {
+  display: block;
+
+  width: 155px;
+  height: 64px;
+
+  object-fit: contain;
+
+  object-position:
+    left center;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  transform:
+    translateZ(0)
+    scale(1);
+
+  transform-origin:
+    left center;
+
+  filter:
+    drop-shadow(
+      0 2px 8px
+      rgba(201, 135, 69, 0.12)
+    );
+
+  transition:
+    transform
+      0.4s
+      cubic-bezier(.16, 1, .3, 1),
+
+    filter
+      0.4s
+      ease;
+}
+
+
+.brand:hover .brand-logo {
+  transform:
+    translateY(-1px)
+    scale(1.035);
+
+  filter:
+    drop-shadow(
+      0 4px 13px
+      rgba(201, 135, 69, 0.25)
+    );
+}
+
+
+/* =====================================================
+   DESKTOP NAVIGATION
+===================================================== */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap:
+    clamp(22px, 3vw, 48px);
+}
+
+
+.nav-links a {
+  position: relative;
+
+  color:
+    rgba(242, 230, 213, 0.70);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.15em;
+
+  text-transform:
+    uppercase;
+
+  text-decoration:
+    none;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+/* Animated underline */
+
+.nav-links a::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    var(--caramel);
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    right center;
+
+  transition:
+    transform
+      0.35s
+      cubic-bezier(.16, 1, .3, 1);
+}
+
+
+.nav-links a:hover {
+  color:
+    var(--milk);
+}
+
+
+.nav-links a:hover::after {
+  transform:
+    scaleX(1);
+
+  transform-origin:
+    left center;
+}
+
+
+/* =====================================================
+   RIGHT ACTIONS
+===================================================== */
+
+.nav-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+}
+
+
+/* =====================================================
+   BAG
+===================================================== */
+
+.bag-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0;
+
+  border: 0;
+
+  background:
+    transparent;
+
+  color:
+    var(--milk);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.75rem;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.14em;
+
+  text-transform:
+    uppercase;
+
+  cursor:
+    pointer;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.bag-btn:hover {
+  color:
+    var(--caramel);
+}
+
+
+.bag-count {
+  width: 27px;
+  height: 27px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(242, 230, 213, 0.25);
+
+  border-radius:
+    50%;
+
+  color:
+    var(--milk);
+
+  font-size:
+    0.65rem;
+
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.bag-btn:hover .bag-count {
+  color:
+    var(--caramel);
+
+  border-color:
+    rgba(201, 135, 69, 0.6);
+
+  background:
+    rgba(201, 135, 69, 0.06);
+
+  transform:
+    scale(1.07);
+}
+
+
+/* =====================================================
+   HAMBURGER
+===================================================== */
+
+.menu-toggle {
+  position: relative;
+
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  flex:
+    0 0 40px;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(242, 230, 213, 0.16);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(13, 9, 7, 0.42);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  cursor:
+    pointer;
+
+  z-index:
+    110;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.menu-toggle:hover,
+.menu-toggle.active {
+  border-color:
+    rgba(201, 135, 69, 0.75);
+
+  background:
+    rgba(201, 135, 69, 0.08);
+}
+
+
+.menu-toggle span {
+  position: absolute;
+
+  left: 50%;
+
+  width: 15px;
+  height: 1px;
+
+  background:
+    var(--cream);
+
+  transform:
+    translateX(-50%);
+
+  transition:
+    top
+      0.35s
+      cubic-bezier(.16, 1, .3, 1),
+
+    transform
+      0.35s
+      cubic-bezier(.16, 1, .3, 1),
+
+    background
+      0.3s ease;
+}
+
+
+.menu-toggle span:first-child {
+  top: 16px;
+}
+
+
+.menu-toggle span:last-child {
+  top: 22px;
+}
+
+
+/* Hamburger becomes X */
+
+.menu-toggle.active span {
+  background:
+    var(--caramel);
+}
+
+
+.menu-toggle.active span:first-child {
+  top: 19px;
+
+  transform:
+    translateX(-50%)
+    rotate(45deg);
+}
+
+
+.menu-toggle.active span:last-child {
+  top: 19px;
+
+  transform:
+    translateX(-50%)
+    rotate(-45deg);
+}
+
+
+/* =====================================================
+   COMPACT MOBILE MENU
+===================================================== */
+
+.mobile-menu {
+  position: fixed;
+
+  top: 84px;
+  right: 22px;
+
+  width:
+    min(
+      360px,
+      calc(100vw - 44px)
+    );
+
+  display: none;
+
+  padding:
+    14px
+    20px
+    17px;
+
+  border:
+    1px solid
+    rgba(242, 230, 213, 0.11);
+
+  border-radius:
+    18px;
+
+  background:
+
+    radial-gradient(
+      circle at 92% 4%,
+      rgba(201, 135, 69, 0.14),
+      transparent 36%
+    ),
+
+    rgba(13, 7, 5, 0.96);
+
+  backdrop-filter:
+    blur(24px);
+
+  -webkit-backdrop-filter:
+    blur(24px);
+
+  box-shadow:
+    0 24px 70px
+    rgba(0, 0, 0, 0.48);
+
+  opacity: 0;
+
+  visibility:
+    hidden;
+
+  transform:
+    translateY(-10px)
+    scale(0.975);
+
+  transform-origin:
+    top right;
+
+  pointer-events:
+    none;
+
+  transition:
+    opacity 0.28s ease,
+    visibility 0.28s ease,
+    transform
+      0.38s
+      cubic-bezier(.16, 1, .3, 1);
+
+  overflow:
+    hidden;
+
+  z-index:
+    95;
+}
+
+
+.mobile-menu.open {
+  opacity: 1;
+
+  visibility:
+    visible;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  pointer-events:
+    auto;
+}
+
+
+/* Decorative glow */
+
+.mobile-menu-glow {
+  position: absolute;
+
+  top: -80px;
+  right: -80px;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(201, 135, 69, 0.10);
+
+  filter:
+    blur(70px);
+
+  pointer-events:
+    none;
+}
+
+
+/* =====================================================
+   MOBILE LINKS
+===================================================== */
+
+.mobile-links {
+  position: relative;
+
+  display: flex;
+
+  flex-direction:
+    column;
+
+  width: 100%;
+
+  z-index:
+    2;
+}
+
+
+.mobile-links a {
+  min-height:
+    61px;
+
+  display: grid;
+
+  grid-template-columns:
+    36px 1fr;
+
+  align-items:
+    center;
+
+  border-bottom:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+
+  text-decoration:
+    none;
+}
+
+
+.mobile-links a:last-child {
+  border-bottom:
+    0;
+}
+
+
+.mobile-links a span {
+  color:
+    rgba(201, 135, 69, 0.62);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.40rem;
+
+  letter-spacing:
+    0.14em;
+}
+
+
+.mobile-links a strong {
+  color:
+    var(--cream);
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+
+  font-size:
+    1.9rem;
+
+  font-weight:
+    500;
+
+  line-height:
+    1;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.mobile-links a:hover strong {
+  color:
+    var(--caramel);
+
+  transform:
+    translateX(5px);
+}
+
+
+/* =====================================================
+   MOBILE MENU FOOTER
+===================================================== */
+
+.mobile-menu-footer {
+  position: relative;
+
+  margin-top:
+    8px;
+
+  padding-top:
+    14px;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  border-top:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+
+  z-index:
+    2;
+}
+
+
+.mobile-menu-footer span {
+  color:
+    rgba(242, 230, 213, 0.27);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.36rem;
+
+  letter-spacing:
+    0.12em;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .navbar {
+    padding:
+      0 30px;
+  }
+
+
+  .brand-logo {
+    width:
+      145px;
+
+    height:
+      58px;
+  }
+
+
+  .nav-links {
+    gap:
+      22px;
+  }
+
+
+  .nav-links a {
+    font-size:
+      0.66rem;
+
+    letter-spacing:
+      0.12em;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE / SMALL TABLET
+===================================================== */
+
+@media (max-width: 850px) {
+
+  .navbar {
+    height:
+      76px;
+
+    padding:
+      0 24px;
+  }
+
+
+  .nav-links {
+    display:
+      none;
+  }
+
+
+  .brand-logo {
+    width:
+      135px;
+
+    height:
+      54px;
+  }
+
+
+  .nav-actions {
+    gap:
+      12px;
+  }
+
+
+  .bag-btn {
+    font-size:
+      0.68rem;
+  }
+
+
+  .bag-count {
+    width:
+      25px;
+
+    height:
+      25px;
+
+    font-size:
+      0.6rem;
+  }
+
+
+  .menu-toggle {
+    display:
+      block;
+  }
+
+
+  .mobile-menu {
+    display:
+      block;
+
+    top:
+      82px;
+
+    right:
+      24px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    height:
+      72px;
+
+    padding:
+      0 18px;
+  }
+
+
+  .brand-logo {
+    width:
+      120px;
+
+    height:
+      48px;
+  }
+
+
+  .nav-actions {
+    gap:
+      9px;
+  }
+
+
+  /* Only number stays on very small phones */
+
+  .bag-text {
+    display:
+      none;
+  }
+
+
+  .bag-btn {
+    gap:
+      0;
+  }
+
+
+  .bag-count {
+    width:
+      25px;
+
+    height:
+      25px;
+  }
+
+
+  .menu-toggle {
+    width:
+      38px;
+
+    height:
+      38px;
+
+    flex-basis:
+      38px;
+  }
+
+
+  .menu-toggle span:first-child {
+    top:
+      15px;
+  }
+
+
+  .menu-toggle span:last-child {
+    top:
+      21px;
+  }
+
+
+  .menu-toggle.active span:first-child,
+  .menu-toggle.active span:last-child {
+    top:
+      18px;
+  }
+
+
+  .mobile-menu {
+    top:
+      76px;
+
+    right:
+      18px;
+
+    width:
+      min(
+        330px,
+        calc(100vw - 36px)
+      );
+
+    padding:
+      10px
+      17px
+      15px;
+
+    border-radius:
+      16px;
+  }
+
+
+  .mobile-links a {
+    min-height:
+      56px;
+
+    grid-template-columns:
+      33px 1fr;
+  }
+
+
+  .mobile-links a strong {
+    font-size:
+      1.75rem;
+  }
+
+
+  .mobile-menu-footer span:last-child {
+    display:
+      none;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+  .navbar {
+    padding:
+      0 14px;
+  }
+
+
+  .brand-logo {
+    width:
+      108px;
+  }
+
+
+  .mobile-menu {
+    right:
+      14px;
+
+    width:
+      calc(100vw - 28px);
+  }
+
+}

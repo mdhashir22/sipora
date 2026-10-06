@@ -1,0 +1,269 @@
+<section
+  #builderSection
+  class="drink-builder"
+  id="create"
+>
+
+  <div class="builder-glow"></div>
+
+  <div class="builder-orbit orbit-one"></div>
+  <div class="builder-orbit orbit-two"></div>
+
+
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+
+  <div class="builder-header">
+
+    <div class="section-number">
+      <span>03</span>
+
+      <div class="number-line"></div>
+
+      <span>CREATE</span>
+    </div>
+
+
+    <div class="builder-heading">
+
+      <p class="eyebrow">
+        FIND YOUR SIP
+      </p>
+
+      <h2>
+        PICK YOUR
+        <span>MOOD.</span>
+      </h2>
+
+    </div>
+
+
+    <p class="builder-intro">
+      Five signature creations. Five different energies.
+      Choose the SIPORA mood that feels like yours.
+    </p>
+
+  </div>
+
+
+  <!-- =========================================
+       BUILDER WORKSPACE
+  ========================================== -->
+
+  <div class="builder-workspace">
+
+
+    <!-- LEFT / CONTROLS -->
+
+    <div class="builder-controls">
+
+      <p class="control-label">
+        CHOOSE YOUR FLAVOUR
+      </p>
+
+
+      <div class="option-heading">
+
+        <span>
+          YOUR MOOD
+        </span>
+
+        <h3>
+          What are you feeling?
+        </h3>
+
+      </div>
+
+
+      <div class="option-list">
+
+        @for (flavour of flavours; track flavour.name) {
+
+          <button
+            type="button"
+            class="option flavour-option"
+            [class.selected]="isSelected(flavour.name)"
+            [attr.aria-pressed]="isSelected(flavour.name)"
+            (click)="selectFlavour(flavour.name)"
+          >
+
+            <span class="option-dot"></span>
+
+
+            <span class="flavour-option-copy">
+
+              <strong>
+                {{ flavour.name }}
+              </strong>
+
+              <small>
+                {{ flavour.mood }}
+              </small>
+
+            </span>
+
+
+            <span class="option-check">
+              ✓
+            </span>
+
+          </button>
+
+        }
+
+      </div>
+
+    </div>
+
+
+    <!-- CENTER / PRODUCT -->
+
+    <div class="builder-product">
+
+      <span class="product-label">
+        YOUR SELECTION
+      </span>
+
+
+      <div class="product-display">
+
+        <div class="product-halo"></div>
+
+        <div class="cup-shadow"></div>
+
+
+        <div class="real-drink-wrap">
+
+          <div class="drink-back-glow"></div>
+
+          <img
+            #drinkImage
+            [src]="currentDrinkImage"
+            [alt]="'SIPORA ' + currentFlavour.productName"
+            class="builder-drink-image"
+            draggable="false"
+          >
+
+        </div>
+
+      </div>
+
+
+      <p class="product-note">
+        Choose a mood. Watch your SIP change.
+      </p>
+
+    </div>
+
+
+    <!-- RIGHT / SUMMARY -->
+
+    <aside class="builder-summary">
+
+      <div class="summary-top">
+
+        <span class="summary-number">
+          SIPORA / 0{{ flavours.indexOf(currentFlavour) + 1 }}
+        </span>
+
+        <span class="summary-status">
+          SELECTED
+        </span>
+
+      </div>
+
+
+      <div
+        #flavourDetails
+        class="flavour-details"
+      >
+
+        <div class="summary-title">
+
+          <p>
+            {{ currentFlavour.type }}
+          </p>
+
+          <h3>
+            {{ currentFlavour.productName }}
+          </h3>
+
+        </div>
+
+
+        <p class="flavour-description">
+          {{ currentFlavour.description }}
+        </p>
+
+
+        <div class="summary-list">
+
+          <div class="summary-row">
+
+            <span>
+              FLAVOUR
+            </span>
+
+            <strong>
+              {{ currentFlavour.name }}
+            </strong>
+
+          </div>
+
+
+          <div class="summary-row">
+
+            <span>
+              MOOD
+            </span>
+
+            <strong>
+              {{ currentFlavour.mood }}
+            </strong>
+
+          </div>
+
+
+          <div class="summary-row">
+
+            <span>
+              STYLE
+            </span>
+
+            <strong>
+              {{ currentFlavour.type }}
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="create-btn"
+      >
+
+        <span>
+          MAKE IT MINE
+        </span>
+
+        <i>
+          ↗
+        </i>
+
+      </button>
+
+
+      <p class="summary-note">
+        Your mood. Your SIPORA.
+      </p>
+
+    </aside>
+
+  </div>
+
+</section>

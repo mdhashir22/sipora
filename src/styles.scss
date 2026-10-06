@@ -1,1 +1,143 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+
+:root {
+
+  --espresso:
+    #17100d;
+
+  --espresso-deep:
+    #0d0907;
+
+  --roast:
+    #38231b;
+
+  --cream:
+    #f2e6d5;
+
+  --milk:
+    #fff9ef;
+
+  --caramel:
+    #c98745;
+
+  --muted:
+    #aa9b8d;
+
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing:
+    border-box;
+}
+
+
+html {
+  scroll-behavior:
+    auto;
+
+  scroll-padding-top:
+    90px;
+}
+
+
+body {
+  margin: 0;
+
+  min-width:
+    320px;
+
+  background:
+    var(--espresso-deep);
+
+  color:
+    var(--cream);
+
+  font-family:
+    'DM Sans',
+    sans-serif;
+
+  overflow-x:
+    hidden;
+}
+
+
+button,
+a {
+  font:
+    inherit;
+}
+
+
+a {
+  color:
+    inherit;
+
+  text-decoration:
+    none;
+}
+
+
+button {
+  border:
+    0;
+}
+
+
+img {
+  max-width:
+    100%;
+}
+
+
+::selection {
+  background:
+    var(--caramel);
+
+  color:
+    var(--espresso-deep);
+}
+
+
+/* =====================================================
+   FIXED NAVBAR ANCHOR OFFSET
+===================================================== */
+
+#experience,
+#flavours,
+#create,
+#story,
+#visit {
+
+  scroll-margin-top:
+    90px;
+
+}
+
+
+@media (max-width: 850px) {
+
+  html {
+    scroll-padding-top:
+      72px;
+  }
+
+
+  #experience,
+  #flavours,
+  #create,
+  #story,
+  #visit {
+
+    scroll-margin-top:
+      72px;
+
+  }
+
+}

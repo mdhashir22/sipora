@@ -1,0 +1,1123 @@
+:host {
+  display: block;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(280px, 0.8fr)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  padding:
+    120px
+    clamp(24px, 5vw, 80px)
+    78px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(115, 67, 38, 0.23),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #0d0907 0%,
+      #17100d 50%,
+      #0b0806 100%
+    );
+
+  isolation: isolate;
+}
+
+
+/* Texture */
+
+.hero::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.035;
+
+  pointer-events: none;
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.5) 3px
+    );
+
+  z-index: -1;
+}
+
+
+/* Main background glow */
+
+.hero-glow {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 520px;
+  height: 520px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(201, 135, 69, 0.08);
+
+  filter:
+    blur(90px);
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   COPY
+===================================================== */
+
+.hero-copy {
+  position: relative;
+
+  min-width: 0;
+
+  z-index: 5;
+}
+
+
+/* LEFT */
+
+.eyebrow {
+  margin-bottom: 25px;
+
+  color:
+    var(--caramel);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.32em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.hero-copy-left h1 {
+  max-width: 650px;
+
+  margin: 0;
+
+  color:
+    var(--cream);
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(4rem, 7.2vw, 8.4rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.76;
+
+  letter-spacing:
+    -0.055em;
+}
+
+
+.hero-copy-left h1 span {
+  display: block;
+
+  margin-top: 12px;
+
+  color:
+    var(--caramel);
+
+  font-weight:
+    500;
+}
+
+
+/* RIGHT */
+
+.hero-copy-right {
+  padding-left:
+    clamp(10px, 3vw, 50px);
+}
+
+
+.hero-copy-right > p {
+  margin-bottom: -4px;
+
+  color:
+    var(--caramel);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    clamp(0.9rem, 1.25vw, 1.15rem);
+
+  font-weight:
+    300;
+
+  letter-spacing:
+    0.24em;
+
+  opacity:
+    0.82;
+}
+
+
+.hero-copy-right h2 {
+  margin: 0;
+
+  color:
+    #f3e5d2;
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(4.2rem, 7.5vw, 8.7rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.9;
+
+  letter-spacing:
+    -0.055em;
+
+  text-shadow:
+    0 0 35px
+    rgba(201, 135, 69, 0.08);
+}
+
+
+.hero-copy-right h2 span {
+  color:
+    var(--caramel);
+}
+
+
+.description {
+  display: block;
+
+  max-width: 320px;
+
+  margin-top: 28px;
+
+  color:
+    rgba(242, 230, 213, 0.62);
+
+  font-size:
+    0.85rem;
+
+  line-height:
+    1.8;
+}
+
+
+/* Mobile copy hidden on desktop */
+
+.hero-mobile-copy {
+  display: none;
+}
+
+
+/* =====================================================
+   PRODUCT STAGE
+===================================================== */
+
+.product-stage {
+  position: relative;
+
+  min-width: 0;
+  min-height: 600px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  perspective:
+    1200px;
+
+  isolation:
+    isolate;
+
+  z-index:
+    4;
+}
+
+
+/* Product glow */
+
+.product-glow {
+  position: absolute;
+
+  left: 50%;
+  top: 48%;
+
+  width: 420px;
+  height: 500px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(201, 135, 69, 0.25) 0%,
+      rgba(139, 75, 39, 0.12) 38%,
+      rgba(82, 42, 25, 0.05) 58%,
+      transparent 73%
+    );
+
+  filter:
+    blur(42px);
+
+  pointer-events:
+    none;
+
+  z-index:
+    0;
+}
+
+
+/* Product wrapper */
+
+.product-visual {
+  position: relative;
+
+  width:
+    min(390px, 29vw);
+
+  height:
+    570px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    translateY(-42px);
+
+  transform-style:
+    preserve-3d;
+
+  perspective:
+    1200px;
+
+  z-index:
+    4;
+}
+
+
+/* Product image */
+
+.hero-product {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit:
+    contain;
+
+  user-select:
+    none;
+
+  -webkit-user-drag:
+    none;
+
+  cursor:
+    pointer;
+
+  transform-origin:
+    50% 72%;
+
+  filter:
+    drop-shadow(
+      0 32px 25px
+      rgba(0, 0, 0, 0.48)
+    )
+    drop-shadow(
+      0 0 30px
+      rgba(201, 135, 69, 0.12)
+    );
+
+  will-change:
+    transform;
+}
+
+
+/* =====================================================
+   ORBITS
+===================================================== */
+
+.orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border:
+    1px solid
+    rgba(201, 135, 69, 0.13);
+
+  border-radius:
+    50%;
+
+  pointer-events:
+    none;
+
+  z-index:
+    1;
+}
+
+
+.orbit-one {
+  width:
+    390px;
+
+  height:
+    390px;
+}
+
+
+.orbit-two {
+  width:
+    520px;
+
+  height:
+    520px;
+}
+
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.hero-bottom {
+  position: absolute;
+
+  left:
+    clamp(24px, 5vw, 80px);
+
+  right:
+    clamp(24px, 5vw, 80px);
+
+  bottom:
+    8px;
+
+  display: flex;
+
+  align-items:
+    flex-end;
+
+  justify-content:
+    space-between;
+
+  color:
+    rgba(242, 230, 213, 0.35);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.62rem;
+
+  letter-spacing:
+    0.18em;
+
+  text-transform:
+    uppercase;
+
+  z-index:
+    6;
+}
+
+
+.scroll-indicator {
+  display: flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  color:
+    rgba(242, 230, 213, 0.55);
+
+  transform:
+    translateY(2px);
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.scroll-indicator:hover {
+  color:
+    var(--caramel);
+}
+
+
+.scroll-line {
+  width:
+    1px;
+
+  height:
+    32px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--caramel),
+      transparent
+    );
+}
+
+
+/* =====================================================
+   SMALL DESKTOP / TABLET LANDSCAPE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+  .hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(260px, 0.8fr)
+      minmax(0, 0.9fr);
+  }
+
+
+  .product-visual {
+    width:
+      min(350px, 30vw);
+
+    height:
+      535px;
+  }
+
+
+  .orbit-one {
+    width:
+      350px;
+
+    height:
+      350px;
+  }
+
+
+  .orbit-two {
+    width:
+      455px;
+
+    height:
+      455px;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .hero {
+    min-height:
+      100svh;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(280px, 0.85fr);
+
+    padding:
+      110px
+      30px
+      75px;
+  }
+
+
+  .hero-copy-left {
+    z-index:
+      6;
+  }
+
+
+  .hero-copy-left h1 {
+    font-size:
+      clamp(4.5rem, 10vw, 7rem);
+  }
+
+
+  .hero-copy-right {
+    display:
+      none;
+  }
+
+
+  .product-stage {
+    min-height:
+      570px;
+
+    z-index:
+      4;
+  }
+
+
+  .product-visual {
+    width:
+      min(360px, 39vw);
+
+    height:
+      535px;
+
+    transform:
+      translateY(-12px);
+  }
+
+
+  .product-glow {
+    width:
+      360px;
+
+    height:
+      440px;
+  }
+
+
+  .orbit-one {
+    width:
+      340px;
+
+    height:
+      340px;
+  }
+
+
+  .orbit-two {
+    width:
+      440px;
+
+    height:
+      440px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE LAYOUT
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .hero {
+    min-height:
+      100svh;
+
+    display: flex;
+
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    justify-content:
+      flex-start;
+
+    padding:
+      105px
+      20px
+      68px;
+  }
+
+
+  /* ---------- TOP COPY ---------- */
+
+  .hero-copy-left {
+    width:
+      100%;
+
+    text-align:
+      left;
+
+    z-index:
+      7;
+  }
+
+
+  .eyebrow {
+    margin-bottom:
+      13px;
+
+    font-size:
+      0.5rem;
+
+    letter-spacing:
+      0.25em;
+  }
+
+
+  .hero-copy-left h1 {
+    max-width:
+      none;
+
+    font-size:
+      clamp(3.5rem, 17vw, 5.25rem);
+
+    line-height:
+      0.78;
+
+    letter-spacing:
+      -0.05em;
+  }
+
+
+  .hero-copy-left h1 span {
+    margin-top:
+      10px;
+  }
+
+
+  /* ---------- PRODUCT ---------- */
+
+  .product-stage {
+    position: relative;
+
+    width:
+      100%;
+
+    min-height:
+      330px;
+
+    height:
+      38svh;
+
+    max-height:
+      400px;
+
+    margin-top:
+      -4px;
+
+    flex-shrink:
+      0;
+
+    z-index:
+      4;
+  }
+
+
+  .product-visual {
+    width:
+      min(245px, 64vw);
+
+    height:
+      min(365px, 43svh);
+
+    transform:
+      none;
+  }
+
+
+  .hero-product {
+    cursor:
+      default;
+
+    filter:
+      drop-shadow(
+        0 24px 20px
+        rgba(0, 0, 0, 0.45)
+      )
+      drop-shadow(
+        0 0 24px
+        rgba(201, 135, 69, 0.10)
+      );
+  }
+
+
+  .product-glow {
+    top:
+      50%;
+
+    width:
+      270px;
+
+    height:
+      320px;
+
+    filter:
+      blur(38px);
+  }
+
+
+  .orbit-one {
+    width:
+      245px;
+
+    height:
+      245px;
+  }
+
+
+  .orbit-two {
+    width:
+      320px;
+
+    height:
+      320px;
+  }
+
+
+  /* ---------- MOBILE MOOD COPY ---------- */
+
+  .hero-mobile-copy {
+    position: relative;
+
+    display: block;
+
+    width:
+      min(100%, 330px);
+
+    margin:
+      -6px 0 0 auto;
+
+    text-align:
+      right;
+
+    z-index:
+      7;
+  }
+
+
+  .hero-mobile-copy > p {
+    margin-bottom:
+      0;
+
+    color:
+      var(--caramel);
+
+    font-family:
+      'Manrope',
+      sans-serif;
+
+    font-size:
+      0.58rem;
+
+    font-weight:
+      400;
+
+    letter-spacing:
+      0.24em;
+  }
+
+
+  .hero-mobile-copy h2 {
+    margin:
+      -3px 0 7px;
+
+    color:
+      var(--cream);
+
+    font-family:
+      'Cormorant Garamond',
+      Georgia,
+      serif;
+
+    font-size:
+      clamp(3rem, 15vw, 4.5rem);
+
+    font-weight:
+      500;
+
+    line-height:
+      0.9;
+
+    letter-spacing:
+      -0.05em;
+  }
+
+
+  .hero-mobile-copy h2 span {
+    color:
+      var(--caramel);
+  }
+
+
+  .hero-mobile-copy > span {
+    display:
+      inline-block;
+
+    max-width:
+      280px;
+
+    color:
+      rgba(242, 230, 213, 0.48);
+
+    font-size:
+      0.7rem;
+
+    line-height:
+      1.65;
+  }
+
+
+  /* ---------- BOTTOM ---------- */
+
+  .edition {
+    display:
+      none;
+  }
+
+
+  .hero-bottom {
+    left:
+      20px;
+
+    right:
+      20px;
+
+    bottom:
+      5px;
+
+    justify-content:
+      center;
+  }
+
+
+  .scroll-indicator {
+    gap:
+      6px;
+
+    font-size:
+      0.52rem;
+  }
+
+
+  .scroll-line {
+    height:
+      24px;
+  }
+
+}
+
+
+/* =====================================================
+   SHORT MOBILE SCREENS
+   Example: 400 x 564
+===================================================== */
+
+@media (max-width: 650px) and (max-height: 650px) {
+
+  .hero {
+    min-height:
+      650px;
+
+    padding-top:
+      92px;
+
+    padding-bottom:
+      55px;
+  }
+
+
+  .eyebrow {
+    margin-bottom:
+      9px;
+  }
+
+
+  .hero-copy-left h1 {
+    font-size:
+      clamp(3.1rem, 15vw, 4.35rem);
+  }
+
+
+  .product-stage {
+    min-height:
+      270px;
+
+    height:
+      285px;
+
+    margin-top:
+      -8px;
+  }
+
+
+  .product-visual {
+    width:
+      min(205px, 54vw);
+
+    height:
+      300px;
+  }
+
+
+  .product-glow {
+    width:
+      235px;
+
+    height:
+      270px;
+  }
+
+
+  .orbit-one {
+    width:
+      205px;
+
+    height:
+      205px;
+  }
+
+
+  .orbit-two {
+    width:
+      275px;
+
+    height:
+      275px;
+  }
+
+
+  .hero-mobile-copy {
+    margin-top:
+      -10px;
+  }
+
+
+  .hero-mobile-copy h2 {
+    font-size:
+      3rem;
+  }
+
+
+  .hero-mobile-copy > span {
+    font-size:
+      0.64rem;
+
+    line-height:
+      1.5;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .hero {
+    padding-left:
+      16px;
+
+    padding-right:
+      16px;
+  }
+
+
+  .eyebrow {
+    font-size:
+      0.46rem;
+
+    letter-spacing:
+      0.2em;
+  }
+
+
+  .hero-copy-left h1 {
+    font-size:
+      clamp(3.15rem, 16.5vw, 4.2rem);
+  }
+
+
+  .product-visual {
+    width:
+      min(220px, 63vw);
+  }
+
+
+  .hero-mobile-copy {
+    width:
+      100%;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-product {
+    transform:
+      none !important;
+  }
+
+}

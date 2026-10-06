@@ -1,0 +1,2179 @@
+:host {
+  display: block;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.cafe-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding:
+    clamp(90px, 8vw, 115px)
+    clamp(24px, 5vw, 80px)
+    0;
+
+  overflow: hidden;
+
+  color: var(--cream);
+
+  background:
+    radial-gradient(
+      circle at 25% 38%,
+      rgba(201, 135, 69, 0.1),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 72%,
+      rgba(87, 46, 27, 0.11),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #070403 0%,
+      #110906 48%,
+      #060302 100%
+    );
+
+  isolation: isolate;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.cafe-section::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -4;
+
+  opacity: 0.022;
+
+  pointer-events: none;
+
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.4) 3px
+    );
+}
+
+
+.cafe-glow {
+  position: absolute;
+
+  top: 30%;
+  left: 32%;
+
+  width: clamp(480px, 55vw, 760px);
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    rgba(201, 135, 69, 0.055);
+
+  filter:
+    blur(130px);
+
+  pointer-events: none;
+
+  z-index: -3;
+}
+
+
+.cafe-grid-line {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(242, 230, 213, 0.045) 15%,
+      rgba(242, 230, 213, 0.045) 85%,
+      transparent
+    );
+
+  z-index: -2;
+}
+
+
+.line-left {
+  left: 33.33%;
+}
+
+
+.line-right {
+  right: 33.33%;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.cafe-header {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(150px, 0.55fr)
+    minmax(420px, 1.65fr)
+    minmax(230px, 0.9fr);
+
+  align-items: end;
+
+  gap:
+    clamp(28px, 3vw, 45px);
+
+  margin-bottom:
+    clamp(60px, 5vw, 78px);
+
+  z-index: 4;
+}
+
+
+.section-number {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding-bottom: 10px;
+
+  color:
+    rgba(242, 230, 213, 0.4);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.58rem;
+
+  letter-spacing:
+    0.22em;
+
+  text-transform:
+    uppercase;
+
+  white-space:
+    nowrap;
+}
+
+
+.number-line {
+  width: 38px;
+  height: 1px;
+
+  flex-shrink: 0;
+
+  background:
+    rgba(201, 135, 69, 0.75);
+}
+
+
+.cafe-heading {
+  min-width: 0;
+}
+
+
+.cafe-heading .eyebrow {
+  margin:
+    0 0 14px;
+
+  color:
+    var(--caramel);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.64rem;
+
+  letter-spacing:
+    0.32em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.cafe-heading h2 {
+  margin: 0;
+
+  color:
+    var(--cream);
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(4.5rem, 7vw, 8rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.76;
+
+  letter-spacing:
+    -0.055em;
+}
+
+
+.cafe-heading h2 span {
+  display: block;
+
+  margin-top: 12px;
+
+  color:
+    var(--caramel);
+
+  font-style:
+    italic;
+}
+
+
+.cafe-intro {
+  max-width: 330px;
+
+  margin:
+    0 0 7px;
+
+  color:
+    rgba(242, 230, 213, 0.47);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    clamp(0.72rem, 0.8vw, 0.8rem);
+
+  line-height:
+    1.8;
+}
+
+
+/* =====================================================
+   VISIT GRID
+===================================================== */
+
+.visit-grid {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.65fr)
+    minmax(300px, 0.75fr);
+
+  width: 100%;
+  max-width: 1380px;
+
+  margin:
+    0 auto;
+
+  border-top:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+
+  border-bottom:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+}
+
+
+/* =====================================================
+   CAFE VISUAL
+===================================================== */
+
+.cafe-visual {
+  min-width: 0;
+
+  padding:
+    clamp(28px, 2.7vw, 38px)
+    clamp(28px, 3vw, 42px)
+    clamp(28px, 2.7vw, 38px)
+    0;
+
+  border-right:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+}
+
+
+.cafe-image-frame {
+  position: relative;
+
+  width: 100%;
+
+  height:
+    clamp(540px, 45vw, 650px);
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(242, 230, 213, 0.09);
+
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      rgba(201, 135, 69, 0.16),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(84, 42, 22, 0.65),
+      transparent 55%
+    ),
+    linear-gradient(
+      145deg,
+      #21120b,
+      #090504 72%
+    );
+
+  box-shadow:
+    0 35px 80px
+    rgba(0, 0, 0, 0.3),
+    inset 0 0 90px
+    rgba(0, 0, 0, 0.3);
+
+  isolation: isolate;
+}
+
+
+.cafe-image-frame::before,
+.cafe-image-frame::after {
+  content: '';
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  pointer-events: none;
+
+  z-index: 4;
+}
+
+
+.cafe-image-frame::before {
+  width:
+    min(460px, 68%);
+
+  border:
+    1px solid
+    rgba(201, 135, 69, 0.09);
+}
+
+
+.cafe-image-frame::after {
+  width:
+    min(340px, 52%);
+
+  border:
+    1px solid
+    rgba(242, 230, 213, 0.04);
+}
+
+
+/* =====================================================
+   REAL IMAGE
+===================================================== */
+
+.cafe-image-wrap {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+
+.cafe-main-image {
+  position: absolute;
+
+  left: 0;
+  top: -6%;
+
+  width: 100%;
+  height: 112%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  -webkit-user-drag: none;
+
+  filter:
+    brightness(0.78)
+    contrast(1.08)
+    saturate(0.9);
+
+  will-change:
+    transform;
+}
+
+
+/* =====================================================
+   CINEMATIC OVERLAY
+===================================================== */
+
+.image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 3, 2, 0.06) 0%,
+      transparent 40%,
+      rgba(5, 3, 2, 0.12) 65%,
+      rgba(5, 3, 2, 0.62) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5, 3, 2, 0.15),
+      transparent 30%,
+      transparent 75%,
+      rgba(5, 3, 2, 0.12)
+    );
+
+  z-index: 3;
+}
+
+
+/* =====================================================
+   LOCATION BADGE
+===================================================== */
+
+.location-badge {
+  position: absolute;
+
+  left:
+    clamp(20px, 2.2vw, 28px);
+
+  bottom:
+    clamp(20px, 2vw, 27px);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  z-index: 5;
+}
+
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    var(--caramel);
+
+  box-shadow:
+    0 0 16px
+    rgba(201, 135, 69, 0.7);
+}
+
+
+.location-badge div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.location-badge small {
+  color:
+    rgba(242, 230, 213, 0.35);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.42rem;
+
+  letter-spacing:
+    0.2em;
+}
+
+
+.location-badge strong {
+  color:
+    var(--cream);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.58rem;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.16em;
+}
+
+
+/* =====================================================
+   FRAME CORNERS
+===================================================== */
+
+.frame-corner {
+  position: absolute;
+
+  width: 26px;
+  height: 26px;
+
+  pointer-events: none;
+
+  z-index: 6;
+}
+
+
+.corner-one {
+  top: 17px;
+  left: 17px;
+
+  border-top:
+    1px solid
+    var(--caramel);
+
+  border-left:
+    1px solid
+    var(--caramel);
+}
+
+
+.corner-two {
+  top: 17px;
+  right: 17px;
+
+  border-top:
+    1px solid
+    var(--caramel);
+
+  border-right:
+    1px solid
+    var(--caramel);
+}
+
+
+.corner-three {
+  bottom: 17px;
+  left: 17px;
+
+  border-bottom:
+    1px solid
+    var(--caramel);
+
+  border-left:
+    1px solid
+    var(--caramel);
+}
+
+
+.corner-four {
+  right: 17px;
+  bottom: 17px;
+
+  border-right:
+    1px solid
+    var(--caramel);
+
+  border-bottom:
+    1px solid
+    var(--caramel);
+}
+
+
+/* =====================================================
+   RIGHT INFO
+===================================================== */
+
+.visit-info {
+  min-width: 0;
+
+  padding:
+    clamp(32px, 2.8vw, 40px)
+    0
+    clamp(32px, 2.8vw, 40px)
+    clamp(28px, 3vw, 42px);
+}
+
+
+.visit-info-top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom:
+    clamp(48px, 4.5vw, 66px);
+}
+
+
+.visit-info-top > span:first-child {
+  color:
+    rgba(242, 230, 213, 0.28);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.47rem;
+
+  letter-spacing:
+    0.19em;
+
+  white-space:
+    nowrap;
+}
+
+
+.open-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color:
+    rgba(181, 179, 110, 0.8);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.43rem;
+
+  letter-spacing:
+    0.14em;
+
+  white-space:
+    nowrap;
+}
+
+
+.open-status::before {
+  content: '';
+
+  width: 5px;
+  height: 5px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    #a9a76a;
+
+  box-shadow:
+    0 0 10px
+    rgba(169, 167, 106, 0.55);
+}
+
+
+/* =====================================================
+   VISIT TITLE
+===================================================== */
+
+.visit-title {
+  margin-bottom:
+    clamp(38px, 4vw, 52px);
+}
+
+
+.visit-title p {
+  margin:
+    0 0 11px;
+
+  color:
+    var(--caramel);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.49rem;
+
+  letter-spacing:
+    0.22em;
+}
+
+
+.visit-title h3 {
+  max-width: 390px;
+
+  margin: 0;
+
+  color:
+    var(--cream);
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(3rem, 4vw, 4.8rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.85;
+}
+
+
+.visit-title h3 em {
+  display: block;
+
+  margin-top: 8px;
+
+  color:
+    var(--caramel);
+
+  font-weight:
+    500;
+}
+
+
+/* =====================================================
+   DETAILS
+===================================================== */
+
+.visit-details {
+  border-top:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+}
+
+
+.visit-row {
+  min-height: 78px;
+
+  padding:
+    15px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(82px, 100px)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 18px;
+
+  border-bottom:
+    1px solid
+    rgba(242, 230, 213, 0.08);
+}
+
+
+.visit-row > span {
+  color:
+    rgba(242, 230, 213, 0.28);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.43rem;
+
+  letter-spacing:
+    0.16em;
+
+  line-height:
+    1.5;
+}
+
+
+.visit-row div {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.visit-row strong {
+  color:
+    rgba(242, 230, 213, 0.75);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.61rem;
+
+  font-weight:
+    500;
+
+  line-height:
+    1.5;
+}
+
+
+.visit-row small {
+  color:
+    rgba(242, 230, 213, 0.28);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.48rem;
+
+  line-height:
+    1.5;
+}
+
+
+/* =====================================================
+   DIRECTIONS BUTTON
+===================================================== */
+
+.directions-btn {
+  width: 100%;
+  min-height: 64px;
+
+  margin-top: 38px;
+
+  padding:
+    0 22px 0 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  border:
+    1px solid
+    var(--caramel);
+
+  background:
+    var(--caramel);
+
+  color:
+    #120b08;
+
+  cursor:
+    pointer;
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.55rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.19em;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.directions-btn i {
+  font-size:
+    1rem;
+
+  font-style:
+    normal;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+.visit-note {
+  margin:
+    16px 0 0;
+
+  color:
+    rgba(242, 230, 213, 0.25);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.48rem;
+
+  line-height:
+    1.6;
+
+  text-align:
+    center;
+}
+
+
+/* =====================================================
+   CLOSING
+===================================================== */
+
+.cafe-closing {
+  width: 100%;
+
+  max-width: 1250px;
+
+  margin:
+    clamp(95px, 9vw, 135px)
+    auto
+    clamp(90px, 8vw, 120px);
+
+  text-align:
+    center;
+}
+
+
+.cafe-closing > span {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color:
+    rgba(242, 230, 213, 0.28);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.5rem;
+
+  letter-spacing:
+    0.32em;
+}
+
+
+.cafe-closing h3 {
+  margin: 0;
+
+  color:
+    var(--cream);
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(4.2rem, 7.5vw, 8.5rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.75;
+
+  letter-spacing:
+    -0.045em;
+
+  text-wrap:
+    balance;
+}
+
+
+.cafe-closing h3 em {
+  display: block;
+
+  margin-top: 16px;
+
+  color:
+    var(--caramel);
+
+  font-weight:
+    500;
+
+  font-style:
+    italic;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.sipora-footer {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(240px, 1.3fr)
+    minmax(140px, 1fr)
+    minmax(150px, 0.7fr);
+
+  gap:
+    clamp(30px, 4vw, 50px);
+
+  padding:
+    clamp(52px, 5vw, 68px)
+    0
+    28px;
+
+  border-top:
+    1px solid
+    rgba(242, 230, 213, 0.09);
+}
+
+
+.footer-brand {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.footer-brand strong {
+  color:
+    var(--cream);
+
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(3.5rem, 5vw, 6rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.8;
+
+  letter-spacing:
+    -0.045em;
+}
+
+
+.footer-brand span {
+  margin-top: 20px;
+
+  color:
+    var(--caramel);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.48rem;
+
+  letter-spacing:
+    0.24em;
+
+  line-height:
+    1.6;
+}
+
+
+.footer-links {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 16px;
+}
+
+
+.footer-links a,
+.footer-social span {
+  position: relative;
+
+  color:
+    rgba(242, 230, 213, 0.48);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.52rem;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.18em;
+}
+
+
+.footer-links a {
+  text-decoration:
+    none;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.footer-links a::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  bottom: -4px;
+
+  width: 0;
+  height: 1px;
+
+  background:
+    var(--caramel);
+
+  transition:
+    width 0.3s ease;
+}
+
+
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+.footer-social {
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  gap: 13px;
+}
+
+
+.footer-social span {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(242, 230, 213, 0.1);
+
+  border-radius:
+    50%;
+
+  cursor:
+    default;
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+  grid-column:
+    1 / -1;
+
+  margin-top:
+    clamp(38px, 4vw, 55px);
+
+  padding-top:
+    24px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  border-top:
+    1px solid
+    rgba(242, 230, 213, 0.07);
+}
+
+
+.footer-bottom span {
+  color:
+    rgba(242, 230, 213, 0.22);
+
+  font-family:
+    'Manrope',
+    sans-serif;
+
+  font-size:
+    0.43rem;
+
+  letter-spacing:
+    0.16em;
+
+  line-height:
+    1.5;
+}
+
+
+/* =====================================================
+   HOVER DEVICES
+===================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .cafe-main-image {
+    transition:
+      filter 0.7s ease;
+  }
+
+
+  .cafe-image-frame:hover .cafe-main-image {
+    filter:
+      brightness(0.84)
+      contrast(1.07)
+      saturate(0.95);
+  }
+
+
+  .directions-btn:hover {
+    color:
+      var(--cream);
+
+    background:
+      transparent;
+
+    transform:
+      translateY(-2px);
+
+    box-shadow:
+      0 15px 40px
+      rgba(0, 0, 0, 0.22);
+  }
+
+
+  .directions-btn:hover i {
+    transform:
+      translate(4px, -4px);
+  }
+
+
+  .footer-links a:hover {
+    color:
+      var(--cream);
+  }
+
+
+  .footer-links a:hover::after {
+    width:
+      100%;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL DESKTOP
+   <= 1280px
+===================================================== */
+
+@media (max-width: 1280px) {
+
+  .cafe-header {
+    grid-template-columns:
+      minmax(130px, 0.45fr)
+      minmax(400px, 1.5fr)
+      minmax(220px, 0.8fr);
+  }
+
+
+  .visit-grid {
+    grid-template-columns:
+      minmax(0, 1.45fr)
+      minmax(310px, 0.75fr);
+  }
+
+
+  .cafe-visual {
+    padding-right:
+      30px;
+  }
+
+
+  .visit-info {
+    padding-left:
+      30px;
+  }
+
+
+  .cafe-image-frame {
+    height:
+      clamp(530px, 48vw, 610px);
+  }
+
+}
+
+
+/* =====================================================
+   LAPTOP / TABLET LANDSCAPE
+   <= 1100px
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .cafe-section {
+    padding-left:
+      clamp(28px, 4vw, 48px);
+
+    padding-right:
+      clamp(28px, 4vw, 48px);
+  }
+
+
+  .cafe-header {
+    grid-template-columns:
+      minmax(145px, 0.65fr)
+      minmax(0, 2fr);
+
+    align-items:
+      end;
+  }
+
+
+  .cafe-intro {
+    grid-column:
+      2;
+
+    max-width:
+      480px;
+
+    margin-top:
+      -5px;
+  }
+
+
+  .cafe-heading h2 {
+    font-size:
+      clamp(4.7rem, 8.5vw, 7rem);
+  }
+
+
+  .visit-grid {
+    grid-template-columns:
+      minmax(0, 1.25fr)
+      minmax(300px, 0.85fr);
+  }
+
+
+  .cafe-image-frame {
+    height:
+      clamp(500px, 54vw, 580px);
+  }
+
+
+  .cafe-visual {
+    padding-right:
+      25px;
+  }
+
+
+  .visit-info {
+    padding-left:
+      25px;
+  }
+
+
+  .visit-info-top {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    gap:
+      12px;
+  }
+
+
+  .visit-title h3 {
+    font-size:
+      clamp(3rem, 4.5vw, 4rem);
+  }
+
+
+  .visit-row {
+    grid-template-columns:
+      82px
+      minmax(0, 1fr);
+
+    gap:
+      13px;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+   <= 900px
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .cafe-header {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      0;
+  }
+
+
+  .section-number {
+    margin-bottom:
+      35px;
+  }
+
+
+  .cafe-heading {
+    max-width:
+      700px;
+  }
+
+
+  .cafe-heading h2 {
+    font-size:
+      clamp(4.7rem, 11vw, 6.7rem);
+  }
+
+
+  .cafe-intro {
+    grid-column:
+      auto;
+
+    max-width:
+      500px;
+
+    margin-top:
+      30px;
+  }
+
+
+  .visit-grid {
+    display:
+      block;
+  }
+
+
+  .cafe-visual {
+    padding:
+      30px 0;
+
+    border-right:
+      0;
+
+    border-bottom:
+      1px solid
+      rgba(242, 230, 213, 0.08);
+  }
+
+
+  .cafe-image-frame {
+    height:
+      auto;
+
+    aspect-ratio:
+      16 / 10;
+  }
+
+
+  .visit-info {
+    padding:
+      48px 0;
+  }
+
+
+  .visit-info-top {
+    flex-direction:
+      row;
+
+    align-items:
+      center;
+
+    margin-bottom:
+      48px;
+  }
+
+
+  .visit-title h3 {
+    max-width:
+      none;
+
+    font-size:
+      clamp(3.7rem, 8vw, 5rem);
+  }
+
+
+  .visit-details {
+    display:
+      grid;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    border-top:
+      0;
+
+    gap:
+      0 35px;
+  }
+
+
+  .visit-row {
+    grid-template-columns:
+      95px
+      minmax(0, 1fr);
+
+    border-top:
+      1px solid
+      rgba(242, 230, 213, 0.08);
+  }
+
+
+  .directions-btn {
+    max-width:
+      500px;
+  }
+
+
+  .visit-note {
+    max-width:
+      500px;
+
+    text-align:
+      left;
+  }
+
+
+  .sipora-footer {
+    grid-template-columns:
+      minmax(260px, 1.2fr)
+      minmax(120px, 0.7fr)
+      minmax(150px, 0.7fr);
+  }
+
+}
+
+
+/* =====================================================
+   TABLET PORTRAIT / LARGE MOBILE
+   <= 700px
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .cafe-section {
+    min-height:
+      auto;
+
+    padding:
+      84px
+      22px
+      0;
+  }
+
+
+  .cafe-grid-line {
+    display:
+      none;
+  }
+
+
+  .cafe-glow {
+    width:
+      400px;
+
+    left:
+      50%;
+
+    filter:
+      blur(100px);
+  }
+
+
+  .cafe-header {
+    margin-bottom:
+      55px;
+  }
+
+
+  .cafe-heading .eyebrow {
+    font-size:
+      0.58rem;
+  }
+
+
+  .cafe-heading h2 {
+    font-size:
+      clamp(3.8rem, 15vw, 5.7rem);
+
+    line-height:
+      0.77;
+  }
+
+
+  .cafe-intro {
+    max-width:
+      440px;
+
+    margin-top:
+      27px;
+
+    font-size:
+      0.73rem;
+  }
+
+
+  .cafe-image-frame {
+    aspect-ratio:
+      4 / 3;
+  }
+
+
+  .visit-info {
+    padding:
+      43px 0;
+  }
+
+
+  .visit-info-top {
+    margin-bottom:
+      42px;
+  }
+
+
+  .visit-title {
+    margin-bottom:
+      40px;
+  }
+
+
+  .visit-title h3 {
+    font-size:
+      clamp(3.2rem, 11vw, 4.4rem);
+  }
+
+
+  .visit-details {
+    display:
+      block;
+
+    border-top:
+      1px solid
+      rgba(242, 230, 213, 0.08);
+  }
+
+
+  .visit-row {
+    grid-template-columns:
+      minmax(82px, 105px)
+      minmax(0, 1fr);
+
+    border-top:
+      0;
+  }
+
+
+  .directions-btn {
+    max-width:
+      none;
+  }
+
+
+  .visit-note {
+    max-width:
+      none;
+
+    text-align:
+      center;
+  }
+
+
+  .cafe-closing {
+    margin:
+      88px auto
+      82px;
+  }
+
+
+  .cafe-closing h3 {
+    font-size:
+      clamp(3.6rem, 14vw, 5.6rem);
+  }
+
+
+  .sipora-footer {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap:
+      42px 30px;
+
+    padding-top:
+      50px;
+  }
+
+
+  .footer-social {
+    grid-column:
+      1 / -1;
+
+    justify-content:
+      flex-start;
+  }
+
+
+  .footer-bottom {
+    flex-wrap:
+      wrap;
+
+    justify-content:
+      flex-start;
+
+    column-gap:
+      30px;
+
+    row-gap:
+      12px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   <= 520px
+===================================================== */
+
+@media (max-width: 520px) {
+
+  .cafe-section {
+    padding:
+      78px
+      18px
+      0;
+  }
+
+
+  .section-number {
+    margin-bottom:
+      31px;
+
+    font-size:
+      0.54rem;
+  }
+
+
+  .number-line {
+    width:
+      32px;
+  }
+
+
+  .cafe-heading h2 {
+    font-size:
+      clamp(3.55rem, 16vw, 4.8rem);
+  }
+
+
+  .cafe-image-frame {
+    aspect-ratio:
+      4 / 4.15;
+  }
+
+
+  .location-badge {
+    left:
+      20px;
+
+    bottom:
+      20px;
+  }
+
+
+  .frame-corner {
+    width:
+      22px;
+
+    height:
+      22px;
+  }
+
+
+  .corner-one {
+    top:
+      14px;
+
+    left:
+      14px;
+  }
+
+
+  .corner-two {
+    top:
+      14px;
+
+    right:
+      14px;
+  }
+
+
+  .corner-three {
+    bottom:
+      14px;
+
+    left:
+      14px;
+  }
+
+
+  .corner-four {
+    right:
+      14px;
+
+    bottom:
+      14px;
+  }
+
+
+  .visit-info-top {
+    align-items:
+      flex-start;
+
+    gap:
+      15px;
+  }
+
+
+  .visit-title h3 {
+    font-size:
+      clamp(3rem, 13vw, 4rem);
+  }
+
+
+  .visit-row {
+    min-height:
+      74px;
+
+    grid-template-columns:
+      85px
+      minmax(0, 1fr);
+
+    gap:
+      14px;
+  }
+
+
+  .directions-btn {
+    min-height:
+      60px;
+
+    margin-top:
+      32px;
+  }
+
+
+  .cafe-closing {
+    margin:
+      76px auto
+      72px;
+  }
+
+
+  .cafe-closing > span {
+    font-size:
+      0.46rem;
+  }
+
+
+  .cafe-closing h3 {
+    font-size:
+      clamp(3.35rem, 15vw, 4.6rem);
+  }
+
+
+  .sipora-footer {
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    gap:
+      38px;
+
+    padding:
+      46px 0
+      25px;
+  }
+
+
+  .footer-brand strong {
+    font-size:
+      clamp(3.8rem, 16vw, 5rem);
+  }
+
+
+  .footer-social {
+    justify-content:
+      flex-start;
+  }
+
+
+  .footer-bottom {
+    width:
+      100%;
+
+    margin-top:
+      5px;
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    gap:
+      10px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   <= 380px
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .cafe-section {
+    padding-left:
+      14px;
+
+    padding-right:
+      14px;
+  }
+
+
+  .section-number {
+    gap:
+      9px;
+  }
+
+
+  .number-line {
+    width:
+      26px;
+  }
+
+
+  .cafe-heading h2 {
+    font-size:
+      clamp(3.15rem, 15.5vw, 3.8rem);
+  }
+
+
+  .cafe-intro {
+    font-size:
+      0.68rem;
+  }
+
+
+  .cafe-image-frame {
+    aspect-ratio:
+      4 / 4.45;
+  }
+
+
+  .location-badge strong {
+    font-size:
+      0.53rem;
+  }
+
+
+  .visit-info-top {
+    flex-direction:
+      column;
+  }
+
+
+  .visit-title h3 {
+    font-size:
+      2.9rem;
+  }
+
+
+  .visit-row {
+    grid-template-columns:
+      75px
+      minmax(0, 1fr);
+
+    gap:
+      11px;
+  }
+
+
+  .visit-row > span {
+    font-size:
+      0.39rem;
+  }
+
+
+  .visit-row strong {
+    font-size:
+      0.56rem;
+  }
+
+
+  .directions-btn {
+    padding:
+      0 18px;
+
+    font-size:
+      0.51rem;
+  }
+
+
+  .cafe-closing h3 {
+    font-size:
+      3.15rem;
+  }
+
+
+  .footer-brand span {
+    letter-spacing:
+      0.18em;
+  }
+
+}
+
+
+/* =====================================================
+   SHORT VIEWPORTS
+===================================================== */
+
+@media (max-height: 650px) and (min-width: 701px) {
+
+  .cafe-section {
+    padding-top:
+      85px;
+  }
+
+
+  .cafe-header {
+    margin-bottom:
+      55px;
+  }
+
+
+  .cafe-image-frame {
+    max-height:
+      540px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cafe-main-image,
+  .directions-btn,
+  .directions-btn i {
+    transition:
+      none !important;
+
+    transform:
+      none !important;
+  }
+
+}
