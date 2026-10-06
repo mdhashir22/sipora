@@ -1406,3 +1406,50 @@
   }
 
 }
+
+/* =====================================================
+   DESKTOP PRODUCT POP HOVER
+===================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .flavour-card {
+    overflow: hidden;
+  }
+
+  .flavour-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(201, 135, 69, 0.38);
+
+    box-shadow:
+      0 30px 65px rgba(0, 0, 0, 0.38),
+      0 0 38px rgba(201, 135, 69, 0.045);
+  }
+
+  .flavour-card:hover .flavour-product {
+    transform:
+      translateY(-18px)
+      rotate(-1.5deg)
+      scale(1.11);
+
+    filter:
+      drop-shadow(
+        10px 36px 27px
+        rgba(0, 0, 0, 0.53)
+      );
+  }
+
+  .flavour-card:hover .product-aura {
+    opacity: 0.46;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.20);
+  }
+
+  .flavour-card:hover .discover {
+    gap: 15px;
+    color: var(--milk);
+  }
+}
