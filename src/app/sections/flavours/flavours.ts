@@ -7,15 +7,10 @@ import {
 } from '@angular/core';
 
 import { gsap } from 'gsap';
-
-import {
-  ScrollTrigger
-} from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
-gsap.registerPlugin(
-  ScrollTrigger
-);
+gsap.registerPlugin(ScrollTrigger);
 
 
 @Component({
@@ -24,8 +19,7 @@ gsap.registerPlugin(
   styleUrl: './flavours.scss',
   templateUrl: './flavours.html',
 })
-export class Flavours
-  implements AfterViewInit, OnDestroy {
+export class Flavours implements AfterViewInit, OnDestroy {
 
   @ViewChild('flavoursSection')
   flavoursSection!: ElementRef<HTMLElement>;
@@ -55,14 +49,38 @@ export class Flavours
 
 
       /*
-       * Accessibility:
-       * show everything normally when
-       * reduced motion is enabled.
+       * =========================================
+       * REDUCED MOTION
+       * =========================================
        */
 
       if (reducedMotion) {
         return;
       }
+
+
+      /*
+       * =========================================
+       * ELEMENTS
+       * =========================================
+       */
+
+      const cards =
+        gsap.utils.toArray<HTMLElement>(
+          '.flavour-card'
+        );
+
+
+      const products =
+        gsap.utils.toArray<HTMLElement>(
+          '.flavour-product'
+        );
+
+
+      const auras =
+        gsap.utils.toArray<HTMLElement>(
+          '.product-aura'
+        );
 
 
       /*
@@ -108,7 +126,10 @@ export class Flavours
               : 0.8,
 
           ease:
-            'power3.out'
+            'power3.out',
+
+          clearProps:
+            'opacity,transform'
         }
       );
 
@@ -131,7 +152,10 @@ export class Flavours
             0.6,
 
           ease:
-            'power3.out'
+            'power3.out',
+
+          clearProps:
+            'opacity,transform'
         },
         '-=0.4'
       );
@@ -157,7 +181,10 @@ export class Flavours
               : 1,
 
           ease:
-            'power4.out'
+            'power4.out',
+
+          clearProps:
+            'opacity,transform'
         },
         '-=0.32'
       );
@@ -181,7 +208,10 @@ export class Flavours
             0.7,
 
           ease:
-            'power3.out'
+            'power3.out',
+
+          clearProps:
+            'opacity,transform'
         },
         '-=0.6'
       );
@@ -194,7 +224,7 @@ export class Flavours
        */
 
       timeline.from(
-        '.flavour-card',
+        cards,
         {
           opacity: 0,
 
@@ -219,7 +249,10 @@ export class Flavours
               : 0.13,
 
           ease:
-            'power4.out'
+            'power4.out',
+
+          clearProps:
+            'opacity,transform'
         },
         '-=0.3'
       );
@@ -232,7 +265,7 @@ export class Flavours
        */
 
       timeline.from(
-        '.flavour-product',
+        products,
         {
           opacity: 0,
 
@@ -257,35 +290,73 @@ export class Flavours
               : 0.1,
 
           ease:
-            'back.out(1.2)'
+            'back.out(1.2)',
+
+          clearProps:
+            'opacity,transform'
         },
         '-=0.65'
       );
 
 
       /*
+       * =========================================
        * PRODUCT AURAS
+       * =========================================
        */
 
       timeline.from(
-        '.product-aura',
+        auras,
         {
           opacity: 0,
 
-          scale:
-            0.7,
+          scale: 0.7,
 
-          duration:
-            0.9,
+          duration: 0.9,
 
-          stagger:
-            0.06,
+          stagger: 0.06,
 
           ease:
-            'power3.out'
+            'power3.out',
+
+          clearProps:
+            'opacity,transform'
         },
         '-=0.85'
       );
+
+
+      /*
+       * =========================================
+       * FINAL CLEANUP
+       *
+       * Important:
+       * Remove GSAP inline transform values after
+       * the reveal so CSS :hover owns transforms.
+       * =========================================
+       */
+
+      timeline.call(() => {
+
+        gsap.set(cards, {
+          clearProps:
+            'transform,opacity'
+        });
+
+
+        gsap.set(products, {
+          clearProps:
+            'transform,opacity'
+        });
+
+
+        gsap.set(auras, {
+          clearProps:
+            'transform,opacity'
+        });
+
+      });
+
 
     }, section);
 
